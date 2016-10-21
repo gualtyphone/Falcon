@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveFalcon : MonoBehaviour {
+public class MoveFalconWithMouse : MonoBehaviour {
 
     public GameObject Falcon;
     public Vector3 vec;
@@ -13,6 +13,6 @@ public class MoveFalcon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = (Input.mousePosition + vec) / 50;
+        transform.position = (new Vector3(Input.mousePosition.x + -650, Input.mousePosition.y + -150, Falcon.transform.position.z)) / 50;
 	}
 }

@@ -13,8 +13,8 @@ public class ContainmentSphere : MonoBehaviour {
     // Use this for initialization
     void Start () {
         SphereMat = GetComponent<MeshRenderer>().material;
-        Normal = new Color(0.0f, 0.0f, 0.0f, 0.10f);
-        Red = new Color(1.0f, 0.0f, 0.0f, 0.45f);
+        Normal = new Color(0.0f, 1.0f, 0.0f, 0.0f);
+        Red = new Color(1.0f, 0.0f, 0.0f, 0.01f);
 
     }
 
@@ -23,7 +23,7 @@ public class ContainmentSphere : MonoBehaviour {
         float distanceFromCenter = Vector3.Distance(FalconTip.transform.position, transform.position);
         if (distanceFromCenter > 2.6)
         {
-            Red = new Color(1.0f, 0.0f, 0.0f, distanceFromCenter/5);
+            Red = new Color(1.0f, 0.0f, 0.0f, (distanceFromCenter)/5.0f);
             SphereMat.SetColor("_Color", Red);
         }
         else
