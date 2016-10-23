@@ -21,9 +21,9 @@ public class ContainmentSphere : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         float distanceFromCenter = Vector3.Distance(FalconTip.transform.position, transform.position);
-        if (distanceFromCenter > 2.6)
+        if (distanceFromCenter > 0)
         {
-            Red = new Color(1.0f, 0.0f, 0.0f, (distanceFromCenter)/5.0f);
+            Red = new Color(1.0f, 0.0f, 0.0f, (distanceFromCenter)/3.0f);
             SphereMat.SetColor("_Color", Red);
         }
         else
