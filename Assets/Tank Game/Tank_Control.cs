@@ -41,7 +41,7 @@ public class Tank_Control : MonoBehaviour {
 
 		if (waitTime <= 0) {
 			FalconUnity.getGodPosition(0,out posDis);
-			FalconUnity.applyForce (0, (-posDis + posDisOffset) * 25, Time.deltaTime);
+			FalconUnity.applyForce (0, (-posDis + posDisOffset) * 15, Time.deltaTime);
 		} else if (waitTime > 0){
 			waitTime -= Time.deltaTime;
 		}

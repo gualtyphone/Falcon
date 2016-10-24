@@ -55,7 +55,11 @@
      <Compile Include="Assets\Scripts\MoveCube.cs" />
      <Compile Include="Assets\Scripts\MoveFalconWithMouse.cs" />
      <Compile Include="Assets\Scripts\RecordPreviousPos.cs" />
+     <Compile Include="Assets\Scripts\meshModifier.cs" />
+     <Compile Include="Assets\Scripts\moevMeshHandle.cs" />
      <Compile Include="Assets\Scripts\moveAround.cs" />
+     <Compile Include="Assets\Scripts\rotateCamera.cs" />
+     <Compile Include="Assets\Scripts\sandSpawner.cs" />
      <Compile Include="Assets\Slingshot Game\BallControl.cs" />
      <Compile Include="Assets\Slingshot Game\lineRenderControl.cs" />
      <Compile Include="Assets\Slingshot Game\scoreControl.cs" />
@@ -68,7 +72,6 @@
      <Compile Include="Assets\novint\FalconSpringedBody.cs" />
      <Compile Include="Assets\novint\FalconUnity.cs" />
      <Compile Include="Assets\novint\SphereManipulator.cs" />
-     <Compile Include="Assets\rotateCamera.cs" />
      <None Include="Assets\Shaders\SphereShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

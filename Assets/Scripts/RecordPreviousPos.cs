@@ -43,7 +43,7 @@ public class RecordPreviousPos : MonoBehaviour {
         {
             for (int i = 0; i < count; i++)
             {
-                Destroy(positions[i]);
+               // Destroy(positions[i]);
                 //positions[i].GetComponent<FalconRigidBody>().enabled = true;
             }
             count = 0;

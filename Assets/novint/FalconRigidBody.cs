@@ -40,7 +40,11 @@ public class FalconRigidBody : MonoBehaviour {
 		
 		FalconUnity.sendDynamicShape(bodyId,shape, f.Length/3, mass, k, localPosition, transform.localRotation, linearFactors, angularFactors, friction);
 	}
-
+    
+    public void disableShape()
+    {
+        FalconUnity.removeDynamicShape(bodyId);
+    }
 	
 	// Update is called once per frame
 	public void FixedUpdate () {
