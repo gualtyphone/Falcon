@@ -18,9 +18,19 @@ public class MoveFalconWithMouse : MonoBehaviour {
 		{
 			Falcon.GetComponent<SphereManipulator>().button_states[0] = true;
 		}
-		if (Input.GetMouseButtonDown(1))
+        else
+        {
+            Falcon.GetComponent<SphereManipulator>().button_states[0] = false;
+
+        }
+        if (Input.GetMouseButtonDown(1))
 		{
 			Falcon.GetComponent<SphereManipulator>().button_states[1] = true;
 		}
-	}
+        else
+        {
+            Falcon.GetComponent<SphereManipulator>().button_states[1] = false;
+
+        }
+    }
 }

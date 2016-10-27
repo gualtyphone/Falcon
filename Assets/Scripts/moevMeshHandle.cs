@@ -6,7 +6,6 @@ public class moevMeshHandle : MonoBehaviour {
     public bool[] buttons;
     public bool objSelected;
     public bool justPressed;
-    public GameObject selectedObj;
     public GameObject canvas;
 
     // Use this for initialization
@@ -22,29 +21,35 @@ public class moevMeshHandle : MonoBehaviour {
         {
             foreach (GameObject handle in handles)
             {
-                
-
-                if (GetComponent<Collider>().bounds.Contains(handle.transform.position) && buttons[0] && !objSelected)
+                if (GetComponent<Collider>().bounds.Contains(handle.transform.position) && buttons[0])
                 {
-                    selectedObj = handle;
-                    objSelected = true;
+                    handle.GetComponent<selectedHandle>().selected = true ;
                     justPressed = true;
+                    objSelected = true;
                 }
-
             }
         }
 
         if (objSelected)
         {
-            selectedObj.transform.position = transform.position;
+            foreach (GameObject handle in handles)
+            {
+                if (handle.GetComponent<selectedHandle>().selected == true)
+                {
+                    handle.transform.position = transform.position;
+                }
+            }
             //Don't try this because the falcon fucks up tremendously
             //canvas.GetComponent<FalconRigidBody>().refreshShape();
         }
         
-        if (objSelected && buttons[1] && !justPressed)
+        if (objSelected && buttons[1])
         {
             objSelected = false;
-            selectedObj = null;
+            foreach (GameObject handle in handles)
+            {
+                handle.GetComponent<selectedHandle>().selected = false;
+            }
             //canvas.GetComponent<FalconRigidBody>().refreshShape();
         }
 

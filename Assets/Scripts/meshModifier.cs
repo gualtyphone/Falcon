@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 //[ExecuteInEditMode]
 
 public class meshModifier : MonoBehaviour
@@ -13,7 +14,8 @@ public class meshModifier : MonoBehaviour
 
     void Start()
     {
-        mesh = GetComponent<MeshFilter>().sharedMesh;
+        mesh = GetComponent<MeshFilter>().mesh;
+        mesh.MarkDynamic();
         verts = mesh.vertices;
         foreach (Vector3 vert in verts)
         {
@@ -26,20 +28,17 @@ public class meshModifier : MonoBehaviour
             print(vertPos);
         }
     }
-
-	void OnApplicationQuit()
+    /*
+    void OnDisable()
     {
-		Debug.Log("deleting everything");
         GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
-		Debug.Log(handles.Length);
-		for (int i = 0; i < handles.Length; i++)
-		{
-			Debug.Log("destroyed object" + i);
-			Destroy(handles[i]);
-		}
+        foreach (GameObject handle in handles)
+        {
+            DestroyImmediate(handle);
+        }
     }
-
-    void Update()
+    */
+    void FixedUpdate()
     {
         handles = GameObject.FindGameObjectsWithTag("handle");
         for (int i = 0; i < verts.Length; i++)
@@ -49,5 +48,6 @@ public class meshModifier : MonoBehaviour
         mesh.vertices = verts;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+        
     }
 }
