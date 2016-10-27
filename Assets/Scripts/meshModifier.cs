@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 
 public class meshModifier : MonoBehaviour
 {
@@ -12,9 +11,9 @@ public class meshModifier : MonoBehaviour
     Vector3 vertPos;
     GameObject[] handles;
 
-    void OnEnable()
+    void Start()
     {
-        mesh = GetComponent<MeshFilter>().mesh;
+        mesh = GetComponent<MeshFilter>().sharedMesh;
         verts = mesh.vertices;
         foreach (Vector3 vert in verts)
         {
@@ -28,13 +27,16 @@ public class meshModifier : MonoBehaviour
         }
     }
 
-    void OnDisable()
+	void OnApplicationQuit()
     {
+		Debug.Log("deleting everything");
         GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
-        foreach (GameObject handle in handles)
-        {
-            DestroyImmediate(handle);
-        }
+		Debug.Log(handles.Length);
+		for (int i = 0; i < handles.Length; i++)
+		{
+			Debug.Log("destroyed object" + i);
+			Destroy(handles[i]);
+		}
     }
 
     void Update()
