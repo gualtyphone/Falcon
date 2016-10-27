@@ -14,5 +14,13 @@ public class MoveFalconWithMouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.position = (new Vector3(Input.mousePosition.x + -650, Input.mousePosition.y + -150, Falcon.transform.position.z)) / 50;
+		if (Input.GetMouseButtonDown(0))
+		{
+			Falcon.GetComponent<SphereManipulator>().button_states[0] = true;
+		}
+		if (Input.GetMouseButtonDown(1))
+		{
+			Falcon.GetComponent<SphereManipulator>().button_states[1] = true;
+		}
 	}
 }

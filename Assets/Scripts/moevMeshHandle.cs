@@ -17,7 +17,7 @@ public class moevMeshHandle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
-        FalconUnity.getFalconButtonStates(0, out buttons);
+		buttons = this.GetComponentInParent<SphereManipulator>().button_states;
         if (!objSelected)
         {
             foreach (GameObject handle in handles)
