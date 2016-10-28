@@ -7,7 +7,7 @@ public class player_Survival_Health : MonoBehaviour {
 	public int health = 10;
 	public turret_Controls turret;	
 	public Text text;
-	float timeSurvived = 0;
+	public float timeSurvived = 0;
 	
 	void Start () {
 		if (turret == null) {
