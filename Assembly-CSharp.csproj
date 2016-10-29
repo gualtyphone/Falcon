@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Machine Gun Game\Game_Control.cs" />
      <Compile Include="Assets\Machine Gun Game\create_Enemies.cs" />
      <Compile Include="Assets\Machine Gun Game\player_Survival_Health.cs" />
      <Compile Include="Assets\Machine Gun Game\survival_Enemy.cs" />
