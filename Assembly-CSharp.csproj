@@ -60,6 +60,7 @@
      <Compile Include="Assets\MainMenu\Scripts\FalconDistanceMainMenu.cs" />
      <Compile Include="Assets\MainMenu\Scripts\camControlFalcon.cs" />
      <Compile Include="Assets\MainMenu\Scripts\levelLoad.cs" />
+     <Compile Include="Assets\MainMenu\StayOnLoad.cs" />
      <Compile Include="Assets\Sculpting Game\meshModifier.cs" />
      <Compile Include="Assets\Sculpting Game\moevMeshHandle.cs" />
      <Compile Include="Assets\Sculpting Game\selectedHandle.cs" />

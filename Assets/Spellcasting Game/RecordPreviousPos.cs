@@ -99,8 +99,13 @@ public class RecordPreviousPos : MonoBehaviour {
     void createSpell()
     {
         //bool[] buttons;
+<<<<<<< HEAD
         //buttons = new bool[3];
         //buttons[0] = Input.GetMouseButton(0);
+=======
+        buttons = new bool[3];
+        buttons[0] = Input.GetMouseButton(0);
+>>>>>>> origin/master
         FalconUnity.getFalconButtonStates(0, out buttons);
         if (buttons[0])
         {
