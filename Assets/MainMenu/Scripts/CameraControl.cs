@@ -16,16 +16,10 @@ public class CameraControl : MonoBehaviour {
 	void Start () {
 
         character = this.transform.parent.gameObject;
-        SetCursorLock(true);
         maxFov = Camera.main.fieldOfView;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
 	}
-
-    void SetCursorLock(bool isLocked)
-    {
-        this.isLocked = isLocked;
-        Screen.lockCursor = isLocked;
-        Cursor.visible = !isLocked;
-    }
 
 	// Update is called once per frame
 	void Update () {
@@ -45,6 +39,7 @@ public class CameraControl : MonoBehaviour {
         if(Input.GetMouseButtonDown(0)) {
 
             Debug.Log("Pressed Left Click");
+            Cursor.lockState = CursorLockMode.Locked;
             if(Camera.main.fieldOfView != minFov) {
                 
                 Camera.main.fieldOfView--;
@@ -54,6 +49,7 @@ public class CameraControl : MonoBehaviour {
         if(Input.GetMouseButtonDown(1)) {
 
             Debug.Log("Pressed Right Click");
+            Cursor.lockState = CursorLockMode.Locked;
             if (Camera.main.fieldOfView != maxFov) {
                 
                 Camera.main.fieldOfView++;

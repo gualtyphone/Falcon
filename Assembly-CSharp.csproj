@@ -57,6 +57,9 @@
      <Compile Include="Assets\Machine Gun Game\survival_Enemy.cs" />
      <Compile Include="Assets\Machine Gun Game\turret_Controls.cs" />
      <Compile Include="Assets\MainMenu\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\MainMenu\Scripts\FalconDistanceMainMenu.cs" />
+     <Compile Include="Assets\MainMenu\Scripts\camControlFalcon.cs" />
+     <Compile Include="Assets\MainMenu\Scripts\levelLoad.cs" />
      <Compile Include="Assets\Sculpting Game\meshModifier.cs" />
      <Compile Include="Assets\Sculpting Game\moevMeshHandle.cs" />
      <Compile Include="Assets\Sculpting Game\selectedHandle.cs" />
