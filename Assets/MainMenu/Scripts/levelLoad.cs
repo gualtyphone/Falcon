@@ -4,8 +4,11 @@ using UnityEngine.UI;
 
 public class levelLoad : MonoBehaviour {
 
-    public string level;
+    public SphereManipulator falc;
+    public int level;
     public float waitTime = 1;
+    bool wait = false;
+    float waitTim2 = 4;
 
     // Use this for initialization
 	void Start () {
@@ -19,15 +22,16 @@ public class levelLoad : MonoBehaviour {
 
             waitTime -= Time.deltaTime;
 
-        }       
+        }     
 	}
+
     void OnTriggerEnter() {
 
         if (waitTime <= 0)
         {
             Application.LoadLevel(level);
-            Debug.Log(1);
         }
 
     }
+
 }

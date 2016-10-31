@@ -86,7 +86,7 @@ public class RecordPreviousPos : MonoBehaviour {
         //bool[] buttons;
         buttons = new bool[3];
         buttons[0] = Input.GetMouseButton(0);
-        //FalconUnity.getFalconButtonStates(0, out buttons);
+        FalconUnity.getFalconButtonStates(0, out buttons);
         if (buttons[0])
         {
             if (count == 0)
