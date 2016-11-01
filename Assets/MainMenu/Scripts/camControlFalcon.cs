@@ -17,7 +17,7 @@ public class camControlFalcon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 pos;
-        FalconUnity.getGodPosition(0, out pos);
+        FalconUnity.getGodPosition(GodObj.transform.parent.GetComponent<SphereManipulator>().falcon_num, out pos);
 	    transform.LookAt(pos, Vector3.up);
         /*if(Camera.main.fieldOfView != maxFov && oldPos.z < pos.z) {
                

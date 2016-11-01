@@ -50,6 +50,7 @@
      <Compile Include="Assets\General Prefabs\FalconDistance.cs" />
      <Compile Include="Assets\General Prefabs\Menu\RotatingMenu.cs" />
      <Compile Include="Assets\General Prefabs\MoveFalconWithMouse.cs" />
+     <Compile Include="Assets\General Prefabs\goToMainMenu.cs" />
      <Compile Include="Assets\General Prefabs\moveAround.cs" />
      <Compile Include="Assets\Machine Gun Game\Game_Control.cs" />
      <Compile Include="Assets\Machine Gun Game\create_Enemies.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\MainMenu\Scripts\camControlFalcon.cs" />
      <Compile Include="Assets\MainMenu\Scripts\levelLoad.cs" />
      <Compile Include="Assets\MainMenu\StayOnLoad.cs" />
+     <Compile Include="Assets\Sculpting Game\falconSetupperSculpting.cs" />
      <Compile Include="Assets\Sculpting Game\meshModifier.cs" />
      <Compile Include="Assets\Sculpting Game\moevMeshHandle.cs" />
      <Compile Include="Assets\Sculpting Game\selectedHandle.cs" />
@@ -69,6 +71,7 @@
      <Compile Include="Assets\Slingshot Game\Scripts\lineRenderControl.cs" />
      <Compile Include="Assets\Slingshot Game\Scripts\scoreControl.cs" />
      <Compile Include="Assets\Spellcasting Game\RecordPreviousPos.cs" />
+     <Compile Include="Assets\Spellcasting Game\spell.cs" />
      <Compile Include="Assets\Tank Game\Scripts\Enemy_Tank.cs" />
      <Compile Include="Assets\Tank Game\Scripts\Tank_Control.cs" />
      <Compile Include="Assets\Tank Game\Scripts\bullet_control.cs" />
@@ -79,7 +82,8 @@
      <Compile Include="Assets\_EXTnovint\FalconUnity.cs" />
      <Compile Include="Assets\_EXTnovint\SphereManipulator.cs" />
      <Compile Include="Assets\_I DONT KNOW WHERE IT BELONGS\rotateCamera.cs" />
-     <Compile Include="Assets\spell.cs" />
+     <Compile Include="Assets\falconSetupperMainMenu.cs" />
+     <Compile Include="Assets\falconSetupperTankGame.cs" />
      <None Include="Assets\Sculpting Game\SphereShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

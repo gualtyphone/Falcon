@@ -4,9 +4,10 @@ using System.Collections;
 public class moevMeshHandle : MonoBehaviour {
 
     public bool[] buttons;
-    public bool objSelected;
-    public bool justPressed;
+    public bool objSelected = false;
+    public bool justPressed = false;
     public GameObject canvas;
+    public float rangeSqr = 0.1f;
 
     // Use this for initialization
     void Start () {
@@ -16,13 +17,19 @@ public class moevMeshHandle : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         GameObject[] handles = GameObject.FindGameObjectsWithTag("handle");
-		buttons = this.GetComponentInParent<SphereManipulator>().button_states;
-        if (!objSelected)
+        FalconUnity.getFalconButtonStates(0, out buttons);
+
+        if (!objSelected && !justPressed)
         {
             foreach (GameObject handle in handles)
             {
-                if (GetComponent<Collider>().bounds.Contains(handle.transform.position) && buttons[0])
+                Vector3 pos;
+                FalconUnity.getGodPosition(0, out pos);
+                //Debug.Log("handleEEEE");
+                float distanceSqr = (pos - handle.transform.position).sqrMagnitude;
+                if (distanceSqr < rangeSqr /*GetComponent<Collider>().bounds.Contains(handle.transform.position)*/ && buttons[0])
                 {
+                    Debug.Log("handleEEEE");
                     handle.GetComponent<selectedHandle>().selected = true ;
                     justPressed = true;
                     objSelected = true;
@@ -36,7 +43,9 @@ public class moevMeshHandle : MonoBehaviour {
             {
                 if (handle.GetComponent<selectedHandle>().selected == true)
                 {
-                    handle.transform.position = transform.position;
+                    Vector3 pos;
+                    FalconUnity.getGodPosition(0, out pos);
+                    handle.transform.position = pos;
                 }
             }
             //Don't try this because the falcon fucks up tremendously

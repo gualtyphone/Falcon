@@ -13,6 +13,7 @@ public class moveAround : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Camera = GameObject.Find("Main Camera");
         if (Input.GetKey(KeyCode.W))
         {
             //this.gameObject.transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z+0.5f), 0.1f);

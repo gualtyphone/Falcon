@@ -26,7 +26,7 @@ public class levelLoad : MonoBehaviour {
 	}
 
     void OnTriggerEnter() {
-
+        Debug.Log("Triggered");
         if (waitTime <= 0)
         {
             Application.LoadLevel(level);

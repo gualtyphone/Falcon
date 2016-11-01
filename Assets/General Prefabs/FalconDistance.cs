@@ -21,12 +21,12 @@ public class FalconDistance : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		FalconUnity.getGodPosition(0,out posDis);
+		FalconUnity.getGodPosition(transform.parent.GetComponentInChildren<turret_Controls>().playerNum,out posDis);
 		if (enableReposition == true) {
 			if (falconForceTime == 0) {
-				FalconUnity.applyForce (0, (-posDis + posDisOffset) * forceMult, Time.deltaTime);
+				FalconUnity.applyForce (transform.parent.GetComponentInChildren<turret_Controls>().playerNum, (-posDis + posDisOffset) * forceMult, Time.deltaTime);
 			} else {
-				FalconUnity.applyForce (0, (-posDis + posDisOffset) * forceMult, falconForceTime);
+				FalconUnity.applyForce (transform.parent.GetComponentInChildren<turret_Controls>().playerNum, (-posDis + posDisOffset) * forceMult, falconForceTime);
 			}
 		}
 

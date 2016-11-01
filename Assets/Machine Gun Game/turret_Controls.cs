@@ -3,7 +3,8 @@ using System.Collections;
 
 public class turret_Controls : MonoBehaviour {
 
-	public SphereManipulator falcManip;
+	public bool[] falcManipButtons;
+    public int playerNum;
 	FalconDistance falc;
 	public float forceMult = 1;
 	public GameObject bullet;
@@ -30,10 +31,11 @@ public class turret_Controls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        FalconUnity.getFalconButtonStates(playerNum, out falcManipButtons);
 		if (waitTime <= 0) {
 			rotAdj = 0;
 			if ((falc.Left && distRotated > rotHorizontalMinMax.x) || (falc.Right && distRotated < rotHorizontalMinMax.y)) {
-				if (falcManip.button_states[1] == true) {
+				if (falcManipButtons[1] == true) {
 					rotAdj = turnSpeed * falc.posDis.x * 2;
 				} else {
 					rotAdj = turnSpeed * falc.posDis.x;
@@ -42,7 +44,7 @@ public class turret_Controls : MonoBehaviour {
 			}
 			transform.RotateAround(transform.position,Vector3.up,rotAdj);
 
-			if (falcManip.button_states[2]) {
+			if (falcManipButtons[2]) {
 				if (shotTime > 0) {
 					shotTime -= Time.deltaTime;
 				} else {

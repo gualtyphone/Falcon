@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Tank_Control : MonoBehaviour {
 
+    public int playerNum;
+
 	public GameObject falcon;
 	public GameObject turret;
 	public GameObject turretAim;
@@ -30,18 +32,20 @@ public class Tank_Control : MonoBehaviour {
 	public float waitTime = 0;
 	public Vector2 aimMaxMin;
 
+ 
 	// Use this for initialization
 	void Start () {
-		FalconUnity.getGodPosition(0,out posDis);
-		FalconUnity.applyForce (0, -posDis * 30, Time.deltaTime);
+		FalconUnity.getGodPosition(playerNum,out posDis);
+		FalconUnity.applyForce (playerNum, -posDis * 30, Time.deltaTime);
+        centerPos = GameObject.Find("Falcon "+ (playerNum+1)).transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (waitTime <= 0) {
-			FalconUnity.getGodPosition(0,out posDis);
-			FalconUnity.applyForce (0, (-posDis + posDisOffset) * 15, Time.deltaTime);
+			FalconUnity.getGodPosition(playerNum,out posDis);
+			FalconUnity.applyForce (playerNum, (-posDis + posDisOffset) * 15, Time.deltaTime);
 		} else if (waitTime > 0){
 			waitTime -= Time.deltaTime;
 		}
@@ -73,8 +77,11 @@ public class Tank_Control : MonoBehaviour {
 				transform.position += transform.forward * Time.deltaTime * speed;
 			}
 
-			if (falconManip.button_states[2] == true && canFire == true) {
-				FalconUnity.applyForce (0, new Vector3 (0,0,-2000), Time.deltaTime);
+            bool[] buttons;
+            FalconUnity.getFalconButtonStates(playerNum, out buttons);
+
+			if (buttons[2] == true && canFire == true) {
+				FalconUnity.applyForce (playerNum, new Vector3 (0,0,-2000), Time.deltaTime);
 				canFire = false;
 				ammoLoaded = false;
 				reloadTimeDone = reloadTime;
@@ -88,7 +95,7 @@ public class Tank_Control : MonoBehaviour {
 			}
 		
 		} else {
-			FalconUnity.applyForce (0, new Vector3(0,0,-20), Time.deltaTime);
+			FalconUnity.applyForce (playerNum, new Vector3(0,0,-20), Time.deltaTime);
 			fireDelay -= Time.deltaTime;
 		}
 
