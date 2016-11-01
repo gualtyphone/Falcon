@@ -1,22 +1,7 @@
 Base path: C:/Program Files/Unity/Editor/Data
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-10412
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-7372
->>>>>>> Josh-Falcon-Edit
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-7372
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-10412
->>>>>>> master
->>>>>>> Josh-Falcon-Edit
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-3020
->>>>>>> BlindGame
+Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-6012
 Cmd: getPlatforms
-Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+Unhandled exception: Readfile from pipe failed. GLE=Pipe terminata.
 
 
 Quitting shader compiler process

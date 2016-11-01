@@ -20,7 +20,7 @@ public class BallControl : MonoBehaviour {
 	public Text textSpace;
     public Slider slide;
 	public int score;
-	public GameObject camera;
+	public GameObject cameraSling;
 	public bool[] relativeCamera = new bool[2];
 	public Vector3[] startCamera = new Vector3[2];
 	public Vector3[] flightCamera = new Vector3[2];
@@ -52,6 +52,14 @@ public class BallControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Application.loadedLevel == 3) //slingshot game
+        {
+            cameraSling = GameObject.Find("CameraSling");
+            falconManip = GameObject.Find("Falcon 1").GetComponent<SphereManipulator>();
+            textSpace = GameObject.Find("TextSling").GetComponent<Text>();
+            slide = GameObject.Find("SliderSling").GetComponent<Slider>();
+            originPos = GameObject.Find("WaypointBall").transform.position;
+        }
 		FalconUnity.getTipPosition (0, out falPos);
 		distance = Vector3.Distance(transform.position,originPos);
         if (reset > 0)
@@ -63,7 +71,9 @@ public class BallControl : MonoBehaviour {
             shotWait -= Time.deltaTime;
         } else
         {
-            if (prevDistance - distance >= shotMargin && !falconManip.button_states[3] && fire == true && distance < closeMidFar.z)
+            bool[] buttons;
+            FalconUnity.getFalconButtonStates(0, out buttons);
+            if (prevDistance - distance >= shotMargin && !buttons[3] && fire == true && distance < closeMidFar.z)
             {
                 fire = false;
                 if (distance < closeMidFar.x)
@@ -125,20 +135,20 @@ public class BallControl : MonoBehaviour {
 
 		if (fire == true) {
 			if (relativeCamera[0] == false) {
-				camera.transform.position = startCamera[0];
-				camera.transform.rotation = Quaternion.Euler(startCamera[1].x,startCamera[1].y,startCamera[1].z);
+                cameraSling.transform.position = startCamera[0];
+                cameraSling.transform.rotation = Quaternion.Euler(startCamera[1].x,startCamera[1].y,startCamera[1].z);
 			} else {
 				transform.LookAt(originPos);
-				camera.transform.LookAt(originPos);
-				camera.transform.position = transform.position - transform.forward;
+                cameraSling.transform.LookAt(originPos);
+                cameraSling.transform.position = transform.position - transform.forward;
 			}
 		} else {
 			if (relativeCamera[1] == false) {
-				camera.transform.position = flightCamera[0];
-				camera.transform.rotation = Quaternion.Euler(flightCamera[1].x,flightCamera[1].y,flightCamera[1].z);
+                cameraSling.transform.position = flightCamera[0];
+                cameraSling.transform.rotation = Quaternion.Euler(flightCamera[1].x,flightCamera[1].y,flightCamera[1].z);
 			} else {
-				camera.transform.position = transform.position + flightCamera[0];
-				camera.transform.rotation = Quaternion.Euler(transform.rotation.x + flightCamera[1].x,transform.rotation.y + flightCamera[1].y,transform.rotation.z + flightCamera[1].z);
+                cameraSling.transform.position = transform.position + flightCamera[0];
+                cameraSling.transform.rotation = Quaternion.Euler(transform.rotation.x + flightCamera[1].x,transform.rotation.y + flightCamera[1].y,transform.rotation.z + flightCamera[1].z);
 			}
 		}
 	}
