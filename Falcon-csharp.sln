@@ -23,6 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
 =======
 =======
@@ -32,6 +33,9 @@ Global
 =======
 																																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> master
+=======
+																																																																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> BlindGame
 =======
 																																																																																															GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master

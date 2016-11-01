@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BlindGame\Scripts\onLevelLoad.cs" />
+     <Compile Include="Assets\BlindGame\Scripts\winGame.cs" />
+     <Compile Include="Assets\DisplayStartMessage.cs" />
      <Compile Include="Assets\General Prefabs\ContainmentSphere.cs" />
      <Compile Include="Assets\General Prefabs\FalconDistance.cs" />
      <Compile Include="Assets\General Prefabs\Menu\RotatingMenu.cs" />
