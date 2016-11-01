@@ -1,16 +1,5 @@
-Base path: C:/Program Files/Unity/Editor/Data
-<<<<<<< HEAD
-<<<<<<< HEAD
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-10412
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-7372
->>>>>>> Josh-Falcon-Edit
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-7372
-=======
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-10412
->>>>>>> master
->>>>>>> Josh-Falcon-Edit
+Base path: /Applications/Unity/Unity.app/Contents
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1--1396816960
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=1070 outsize=1873 ok=1
+  insize=1029 outsize=1854 ok=1
